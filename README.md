@@ -1,0 +1,2 @@
+# CSocketOpenCV
+使用C语言Socket在服务端处理图像内容Server端与Client端
