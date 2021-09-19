@@ -42,10 +42,10 @@ ________________________________
 * xml(XML文件目录)  
 * src(服务端源码)  
 |---main.cpp(主函数)  
-  |---Socket(网络监听与线程管理)  
+  |---Socket(网络监听与进程管理)  
   &emsp;&emsp;|--MySocket.cpp  
   &emsp;&emsp;|--MySocket.h  
-  |---Process(子线程TODO)  
+  |---Process(子进程TODO)  
   &emsp;&emsp;|---Process.cpp  
   &emsp;&emsp;|---Process.h  
   some ......

@@ -4,9 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/SD/csokcet-image-test/src/Process/Process.cpp" "/SD/csokcet-image-test/src/CMakeFiles/CSocketImageTest.dir/Process/Process.cpp.o"
-  "/SD/csokcet-image-test/src/Socket/MySocket.cpp" "/SD/csokcet-image-test/src/CMakeFiles/CSocketImageTest.dir/Socket/MySocket.cpp.o"
-  "/SD/csokcet-image-test/src/main.cpp" "/SD/csokcet-image-test/src/CMakeFiles/CSocketImageTest.dir/main.cpp.o"
+  "/SD/csocketImageTest/src/ImageTest/imageProcess.cpp" "/SD/csocketImageTest/src/CMakeFiles/CSocketImageTest.dir/ImageTest/imageProcess.cpp.o"
+  "/SD/csocketImageTest/src/Process/Process.cpp" "/SD/csocketImageTest/src/CMakeFiles/CSocketImageTest.dir/Process/Process.cpp.o"
+  "/SD/csocketImageTest/src/Socket/MySocket.cpp" "/SD/csocketImageTest/src/CMakeFiles/CSocketImageTest.dir/Socket/MySocket.cpp.o"
+  "/SD/csocketImageTest/src/main.cpp" "/SD/csocketImageTest/src/CMakeFiles/CSocketImageTest.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,7 +16,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "src/ImageTest"
   "src/Socket"
   "src/Process"
-  "/usr/include/opencv"
+  "/usr/local/include/opencv4"
   )
 
 # Targets to which this target links.

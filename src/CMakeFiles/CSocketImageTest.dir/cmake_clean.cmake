@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CSocketImageTest.dir/main.cpp.o"
+  "CMakeFiles/CSocketImageTest.dir/ImageTest/imageProcess.cpp.o"
   "CMakeFiles/CSocketImageTest.dir/Socket/MySocket.cpp.o"
   "CMakeFiles/CSocketImageTest.dir/Process/Process.cpp.o"
   "../bin/CSocketImageTest.pdb"

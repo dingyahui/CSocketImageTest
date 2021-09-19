@@ -25,6 +25,7 @@ int main(int argc,char**argv){
     int clientSocket=socket.getClientSocket();
     Process process(clientSocket);
     process.run();
+    std::cout<<">>Child Process Socket:["<<clientSocket<<"] End\n";
     return 0;
 
 }

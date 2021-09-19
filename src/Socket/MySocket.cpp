@@ -1,3 +1,4 @@
+//116.63.175.161
 #include"./MySocket.h"
 MySocket::MySocket(const char*ip,int port){
     _ip=(char*)malloc(sizeof(strlen(ip)+1));
@@ -34,6 +35,7 @@ void MySocket::run(){
             flag=0;//jump this while     
         }    
     }
+    std::cout<<">>Child Process Run Start\n";
 }
 
 int MySocket::getClientSocket(){
