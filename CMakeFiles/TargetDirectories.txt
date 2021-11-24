@@ -1,5 +1,0 @@
-/SD/csocketImageTest/CMakeFiles/rebuild_cache.dir
-/SD/csocketImageTest/CMakeFiles/edit_cache.dir
-/SD/csocketImageTest/src/CMakeFiles/rebuild_cache.dir
-/SD/csocketImageTest/src/CMakeFiles/CSocketImageTest.dir
-/SD/csocketImageTest/src/CMakeFiles/edit_cache.dir
