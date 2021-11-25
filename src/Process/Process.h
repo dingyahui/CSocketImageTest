@@ -10,12 +10,14 @@
 #include<errno.h>
 #include<opencv2/opencv.hpp>
 #include<iostream>
+#include"../ImageTest/imageProcess.h"
 class Process{
 private:
     char _sendBuffer[512];
     char _recBuffer[512];
     int _clientSocket;
     int testRecString(const char*string);
+    ImageProcess imageTest;
 public:
     Process(int clientSocket);
     ~Process();

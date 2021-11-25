@@ -9,17 +9,21 @@ Process::~Process(){
 }
 void Process::run(){
     //read data
-    while(1){
-        int len=read(_clientSocket,_recBuffer,14);
+    //while(1){
+        int len=read(_clientSocket,_recBuffer,13);
         if(len<=0){
-            break;//socket closed
+            return;//socket closed
         }
+        //std::cout<<len<<"\n";
         //test rec string
+        _recBuffer[13]='\0';
+        printf("%s\n",_recBuffer);
         testRecString(_recBuffer);
-    }
+    //}
 }
 int Process::testRecString(const char*string){
-    const char* recFileName="./tempdir/temp.png";
+    char recFileName[125];
+    sprintf(recFileName,"./tempdir/%d_temp.png",_clientSocket);
     const char* recImageFile="SENDIMAGEFILE";
     if(string==NULL){return 0;}//0 is null
     //test string
@@ -41,8 +45,13 @@ int Process::testRecString(const char*string){
         }
         fclose(file);//close file
         std::cout<<">>REC FILE OVER NEXT TO TEST\n";
+        //IMAGE PROCESS
+        cv::Mat image = cv::imread(recFileName);
+        int number = imageTest.imageProcess(image);
         //WRITE RESPONSE
-        const char *response="REC IMAGE OVER";
+        char response[100];
+        memset(response,0,sizeof(response));
+        sprintf(response,"TEST RESULT IS %d",number);
         send(_clientSocket,response,strlen(response),0);
     }
     return 1;

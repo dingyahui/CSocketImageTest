@@ -22,7 +22,7 @@ struct sockaddr_in _client_address;//客户端信息
 socklen_t _client_address_size;
 char _send_buffer[512];//缓冲区
 char _rec_buffer[512];
-int main(void){
+int main(int argc,char**argv){
   //创建客户端套接字
    _client_socket=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
    if(_client_socket==-1){
@@ -32,7 +32,8 @@ int main(void){
    //服务端主机信息
    memset(&_server_address,0,sizeof(_server_address));
    _server_address.sin_family=AF_INET;
-   _server_address.sin_addr.s_addr=inet_addr("192.168.38.129");
+   //printf("%s\n",argv[0]);
+   _server_address.sin_addr.s_addr=inet_addr(argv[1]);
    _server_address.sin_port=htons(5555);
    if(0!=connect(_client_socket,(struct sockaddr*)&_server_address,sizeof(_server_address))){
        printf(">>connect failed,errno = %d.\n",errno);
@@ -56,17 +57,18 @@ int main(void){
    }else{//父进程
              int i=1;
          //while(1){
-                        sprintf(_send_buffer,"SENDIMAGEFILE");
-                send(_client_socket,_send_buffer,strlen(_send_buffer),0);
+                        const char* header="SENDIMAGEFILE\0";
+                        //sprintf(_send_buffer,"SENDIMAGEFILE\0");
+                send(_client_socket,header,strlen(header),0);
                                 printf(">>SENDED DATA:SENDIMAGEFILE\n");
-                                const char*fileName="/mnt/f/send.png";
-                                FILE*file=fopen(fileName,"r");
+                                //const char*fileName="/mnt/f/send.png";
+                                FILE*file=fopen(argv[2],"r");
                                 if(NULL==file){
                                         printf(">>Open file failed\n");
                                         return -1;
                                 }
                                 //获取文件大小
-                                size_t filesize=file_size(fileName);
+                                size_t filesize=file_size(argv[2]);
                                 printf(">>FILE COUNT SIZE:%ld\n",filesize);
                                 size_t count;
                                 size_t size=0;
